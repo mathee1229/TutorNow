@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  application:
+    name: tutornow-backend
+  datasource:
+    # Default to H2 embedded database for effortless out-of-the-box local testing
+    # In production/docker, switch to MySQL via SPRING_PROFILES_ACTIVE=prod or env vars
+    url: jdbc:h2:mem:tutornowdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  jwt:
+    secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    expiration-ms: 86400000 # 24 hours
+  platform:
+    commission-percentage: 10.0
+  payhere:
+    merchant-id: "1211111" # Sandbox merchant ID
+    merchant-secret: "404E635266556A586E3272357538782F"
+    currency: "LKR"
+    sandbox-mode: true
