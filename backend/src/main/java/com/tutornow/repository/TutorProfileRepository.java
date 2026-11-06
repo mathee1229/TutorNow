@@ -13,4 +13,6 @@ public interface TutorProfileRepository extends JpaRepository<TutorProfile, Long
     Optional<TutorProfile> findByUser(User user);
     Optional<TutorProfile> findByUserId(Long userId);
     List<TutorProfile> findByIsVerifiedTrue();
+    long countByIsVerifiedFalse();
+    List<TutorProfile> findAllByOrderByIdDesc();
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
-import { GraduationCap, LogIn, AlertCircle, Sparkles } from 'lucide-react';
+import { GraduationCap, LogIn, AlertCircle } from 'lucide-react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -19,7 +19,9 @@ export default function LoginPage() {
 
     try {
       const res = await login(email, password);
-      if (res.role === 'ROLE_TUTOR') {
+      if (res.role === 'ROLE_ADMIN') {
+        navigate('/admin');
+      } else if (res.role === 'ROLE_TUTOR') {
         navigate('/marketplace');
       } else {
         navigate('/marketplace');
@@ -29,11 +31,6 @@ export default function LoginPage() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const fillQuickDemo = (userEmail, userPass) => {
-    setEmail(userEmail);
-    setPassword(userPass);
   };
 
   return (
@@ -58,29 +55,6 @@ export default function LoginPage() {
             <span>{error}</span>
           </div>
         )}
-
-        {/* Quick Demo Pre-fills */}
-        <div className="bg-orange-50/70 border border-orange-200 rounded-2xl p-3.5 space-y-2">
-          <p className="text-[11px] font-bold text-orange-950 flex items-center gap-1">
-            <Sparkles className="w-3.5 h-3.5 text-neon-orange" /> 1-Click Demo Accounts:
-          </p>
-          <div className="grid grid-cols-2 gap-2 text-[11px]">
-            <button
-              type="button"
-              onClick={() => fillQuickDemo('sandun@student.lk', 'student123')}
-              className="bg-white hover:bg-orange-100 text-gray-800 font-bold py-1.5 px-2 rounded-lg border border-orange-200 transition-colors"
-            >
-              Demo Student
-            </button>
-            <button
-              type="button"
-              onClick={() => fillQuickDemo('kavindu@tutors.lk', 'tutor123')}
-              className="bg-white hover:bg-orange-100 text-gray-800 font-bold py-1.5 px-2 rounded-lg border border-orange-200 transition-colors"
-            >
-              Demo Tutor (Mora)
-            </button>
-          </div>
-        </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>

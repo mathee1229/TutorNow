@@ -9,6 +9,7 @@ import {
   BookOpen, 
   LogOut, 
   ShieldCheck, 
+  ShieldAlert,
   Menu, 
   X
 } from 'lucide-react';
@@ -72,6 +73,16 @@ export default function Navbar() {
             {user?.role === 'ROLE_TUTOR' && (
               <Link to="/tutor/bids" className="hover:text-neon-orange transition-colors">
                 My Bids
+              </Link>
+            )}
+
+            {user?.role === 'ROLE_ADMIN' && (
+              <Link 
+                to="/admin" 
+                className="text-orange-700 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-3 py-1.5 rounded-xl text-xs font-bold transition-colors flex items-center gap-1.5 shadow-sm"
+              >
+                <ShieldAlert className="w-3.5 h-3.5 text-neon-orange" />
+                Admin Panel
               </Link>
             )}
           </nav>
@@ -187,6 +198,15 @@ export default function Navbar() {
                   className="block w-full text-center bg-orange-50 text-orange-800 py-2 rounded-lg text-sm font-semibold border border-orange-200"
                 >
                   Wallet & Payouts
+                </Link>
+              )}
+              {user.role === 'ROLE_ADMIN' && (
+                <Link
+                  to="/admin"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-bold shadow-sm"
+                >
+                  Admin Management Portal
                 </Link>
               )}
               <button

@@ -18,6 +18,7 @@ import StudentRequestsPage from './pages/StudentRequestsPage';
 import TutorBidsPage from './pages/TutorBidsPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import AdminPage from './pages/AdminPage';
 
 export default function App() {
   const { initialize } = useAuthStore();
@@ -43,6 +44,7 @@ export default function App() {
             <Route path="/tutor/wallet" element={<TutorWalletPage />} />
             <Route path="/tutor/bids" element={<TutorBidsPage />} />
             <Route path="/student/requests" element={<StudentRequestsPage />} />
+            <Route path="/admin" element={<AdminPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />

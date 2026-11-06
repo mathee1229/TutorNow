@@ -45,13 +45,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Embedded H2 for zero-configuration local execution and testing -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
         <!-- JWT Support -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

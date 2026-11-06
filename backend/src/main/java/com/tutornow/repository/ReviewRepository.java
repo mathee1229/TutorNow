@@ -12,4 +12,5 @@ import java.util.List;
 public interface ReviewRepository extends JpaRepository<Review, Long> {
     List<Review> findByRevieweeOrderByCreatedAtDesc(User reviewee);
     List<Review> findByBooking(Booking booking);
+    List<Review> findAllByOrderByCreatedAtDesc();
 }

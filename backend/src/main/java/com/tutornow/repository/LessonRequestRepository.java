@@ -15,4 +15,6 @@ public interface LessonRequestRepository extends JpaRepository<LessonRequest, Lo
     List<LessonRequest> findByStatusOrderByCreatedAtDesc(RequestStatus status);
     List<LessonRequest> findByDeliveryModeAndStatus(DeliveryMode deliveryMode, RequestStatus status);
     List<LessonRequest> findBySubjectContainingIgnoreCaseAndStatus(String subject, RequestStatus status);
+    long countByStatus(RequestStatus status);
+    List<LessonRequest> findAllByOrderByCreatedAtDesc();
 }

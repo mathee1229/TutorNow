@@ -29,14 +29,18 @@
 
 ### 1. Spring Boot Backend
 
-The backend includes an embedded H2 database configuration for zero-setup local testing.
+The backend uses MySQL so application data is retained when it restarts. Start a local MySQL server and create the `tutornow` database (or allow the configured MySQL user to create it). Set the connection variables in PowerShell before starting the backend:
 
 ```powershell
+$env:SPRING_DATASOURCE_URL = "jdbc:mysql://localhost:3306/tutornow?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
+$env:SPRING_DATASOURCE_USERNAME = "root"
+$env:SPRING_DATASOURCE_PASSWORD = "<your-mysql-password>"
 cd backend
 mvn spring-boot:run
 ```
 - Server starts on: `http://localhost:8080`
-- H2 Console: `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:tutornowdb`)
+- The default connection is `localhost:3306`, database `tutornow`, user `root`, and an empty password. Override these defaults with the environment variables above to match your MySQL setup.
+- Hibernate creates or updates the schema without dropping existing data. The demo accounts and sample content are inserted only when the database has no users.
 
 ### 2. React (Vite) Frontend
 

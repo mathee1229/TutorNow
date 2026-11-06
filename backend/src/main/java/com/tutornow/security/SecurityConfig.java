@@ -56,11 +56,11 @@ public class SecurityConfig {
                         .requestMatchers("/error").permitAll()
                         .requestMatchers("/api/v1/payments/ipn").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
+                        .requestMatchers("/api/v1/admin/**", "/api/v1/tutors/admin/**").hasAuthority("ROLE_ADMIN")
                         .requestMatchers(HttpMethod.GET, "/api/v1/requests/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/bids/request/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/tutors/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/reviews/**").permitAll()
-                        .requestMatchers("/api/v1/admin/**", "/api/v1/tutors/admin/**").hasAuthority("ROLE_ADMIN")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

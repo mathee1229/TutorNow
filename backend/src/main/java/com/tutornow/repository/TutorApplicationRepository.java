@@ -16,4 +16,6 @@ public interface TutorApplicationRepository extends JpaRepository<TutorApplicati
     List<TutorApplication> findByTutorOrderByCreatedAtDesc(User tutor);
     Optional<TutorApplication> findByLessonRequestAndTutor(LessonRequest lessonRequest, User tutor);
     List<TutorApplication> findByLessonRequestIdAndStatus(Long lessonRequestId, ApplicationStatus status);
+    long countByLessonRequestId(Long lessonRequestId);
+    void deleteByLessonRequestId(Long lessonRequestId);
 }

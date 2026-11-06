@@ -8,16 +8,10 @@ spring:
   application:
     name: tutornow-backend
   datasource:
-    # Default to H2 embedded database for effortless out-of-the-box local testing
-    # In production/docker, switch to MySQL via SPRING_PROFILES_ACTIVE=prod or env vars
-    url: jdbc:h2:mem:tutornowdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
-    username: sa
-    password: 
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+    url: "${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/tutornow_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
   jpa:
     open-in-view: false
     hibernate:
