@@ -24,6 +24,7 @@ public class BidService {
     private final TutorProfileRepository tutorProfileRepository;
     private final BookingRepository bookingRepository;
     private final AuthService authService;
+    private final ZoomService zoomService;
 
     @Value("${app.platform.commission-percentage:10.0}")
     private double commissionPercentage;
@@ -32,12 +33,14 @@ public class BidService {
                       LessonRequestRepository lessonRequestRepository,
                       TutorProfileRepository tutorProfileRepository,
                       BookingRepository bookingRepository,
-                      AuthService authService) {
+                      AuthService authService,
+                      ZoomService zoomService) {
         this.tutorApplicationRepository = tutorApplicationRepository;
         this.lessonRequestRepository = lessonRequestRepository;
         this.tutorProfileRepository = tutorProfileRepository;
         this.bookingRepository = bookingRepository;
         this.authService = authService;
+        this.zoomService = zoomService;
     }
 
     @Transactional
@@ -120,7 +123,9 @@ public class BidService {
 
         String meetingLink = null;
         if (request.getDeliveryMode() == DeliveryMode.ONLINE) {
-            meetingLink = "https://meet.jit.si/tutornow-" + UUID.randomUUID().toString().substring(0, 8);
+            String topic = "TutorNow: " + request.getSubject() + " (" + request.getLessonTopic() + ")";
+            String agenda = "Online session for student " + student.getFullName() + " with tutor " + bid.getTutor().getFullName();
+            meetingLink = zoomService.createMeeting(topic, agenda, 60);
         }
 
         Booking booking = Booking.builder()

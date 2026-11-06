@@ -612,26 +612,52 @@ export default function BookingDetailsPage() {
           </div>
 
           {booking.deliveryMode === 'ONLINE' ? (
-            <div className="bg-blue-50/60 border border-blue-200 rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className={`rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border ${
+              booking.meetingLink?.includes('zoom.us')
+                ? 'bg-gradient-to-r from-blue-50 to-indigo-50/50 border-blue-200'
+                : 'bg-blue-50/60 border-blue-200'
+            }`}>
               <div className="flex items-start gap-3">
-                <Video className="w-6 h-6 text-blue-600 shrink-0 mt-1" />
+                <div className={`p-2.5 rounded-xl shrink-0 ${
+                  booking.meetingLink?.includes('zoom.us') ? 'bg-[#0B5CFF] text-white' : 'bg-blue-600 text-white'
+                }`}>
+                  <Video className="w-5 h-5" />
+                </div>
                 <div>
-                  <h4 className="font-bold text-blue-950 text-sm">Online Live Classroom</h4>
-                  <p className="text-xs text-blue-800 mt-0.5">
-                    Click below to open the dedicated private video conference with screen share and whiteboard.
+                  <div className="flex items-center gap-2">
+                    <h4 className="font-bold text-gray-900 text-sm">
+                      {booking.meetingLink?.includes('zoom.us') ? 'Zoom Workplace Live Session' : 'Online Live Classroom'}
+                    </h4>
+                    {booking.meetingLink?.includes('zoom.us') && (
+                      <span className="px-2 py-0.5 bg-[#0B5CFF]/10 text-[#0B5CFF] text-[10px] font-black rounded-md tracking-wider">
+                        ZOOM
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-gray-600 mt-1">
+                    {booking.meetingLink?.includes('zoom.us')
+                      ? 'Automated Zoom Workplace meeting generated for this lesson. Click below to launch in Zoom app or browser.'
+                      : 'Click below to open the dedicated private video conference with screen share and digital whiteboard.'}
                   </p>
                 </div>
               </div>
 
               {booking.meetingLink ? (
-                <a
-                  href={booking.meetingLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-5 py-2.5 rounded-xl flex items-center gap-1.5 shadow-sm shrink-0"
-                >
-                  Join Live Room <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+                <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto">
+                  <a
+                    href={booking.meetingLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`flex-1 sm:flex-initial text-white text-xs font-bold px-5 py-2.5 rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition-all ${
+                      booking.meetingLink?.includes('zoom.us')
+                        ? 'bg-[#0B5CFF] hover:bg-[#004BD6]'
+                        : 'bg-blue-600 hover:bg-blue-700'
+                    }`}
+                  >
+                    {booking.meetingLink?.includes('zoom.us') ? 'Launch Zoom Meeting' : 'Join Live Room'}
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
               ) : (
                 <span className="text-xs text-gray-400">Meeting link preparing...</span>
               )}

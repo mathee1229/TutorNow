@@ -11,6 +11,11 @@ import {
   Paperclip
 } from 'lucide-react';
 
+function getMinimumSlot() {
+  const nextMinute = new Date(Math.ceil((Date.now() + 1) / 60000) * 60000);
+  return new Date(nextMinute.getTime() - nextMinute.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+}
+
 export default function PostRequestPage() {
   useAuthStore();
   const navigate = useNavigate();
@@ -44,6 +49,10 @@ export default function PostRequestPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!preferredSlot || !(new Date(preferredSlot).getTime() > Date.now())) {
+      setError('Please select a future date and time.');
+      return;
+    }
     setSubmitting(true);
     setError('');
 
@@ -53,7 +62,7 @@ export default function PostRequestPage() {
         lessonTopic,
         studentGrade,
         targetBudget: parseFloat(targetBudget),
-        preferredSlot: preferredSlot || new Date(Date.now() + 86400000 * 2).toISOString(),
+        preferredSlot,
         deliveryMode,
         townName: deliveryMode === 'PHYSICAL' ? townName : null,
         fullAddress: deliveryMode === 'PHYSICAL' ? fullAddress : 'Online Class',
@@ -173,6 +182,8 @@ export default function PostRequestPage() {
               <input
                 type="datetime-local"
                 required
+                min={getMinimumSlot()}
+                onFocus={(e) => { e.target.min = getMinimumSlot(); }}
                 value={preferredSlot}
                 onChange={(e) => setPreferredSlot(e.target.value)}
                 className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-neon-orange"

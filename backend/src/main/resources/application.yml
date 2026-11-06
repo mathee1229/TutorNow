@@ -32,3 +32,7 @@ app:
     merchant-secret: "404E635266556A586E3272357538782F"
     currency: "LKR"
     sandbox-mode: true
+  zoom:
+    account-id: "${ZOOM_ACCOUNT_ID:}"
+    client-id: "${ZOOM_CLIENT_ID:}"
+    client-secret: "${ZOOM_CLIENT_SECRET:}"

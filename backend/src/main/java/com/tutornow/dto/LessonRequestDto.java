@@ -4,6 +4,7 @@ import com.tutornow.model.DeliveryMode;
 import com.tutornow.model.RequestStatus;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Future;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -22,6 +23,7 @@ public class LessonRequestDto {
         private BigDecimal targetBudget;
 
         @NotNull(message = "Preferred slot time is required")
+        @Future(message = "Please select a future date and time")
         private LocalDateTime preferredSlot;
 
         @NotNull(message = "Delivery mode is required")
