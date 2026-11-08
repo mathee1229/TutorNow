@@ -50,7 +50,7 @@ export default function TutorWalletPage() {
   if (loading) {
     return (
       <div className="py-24 text-center">
-        <div className="w-10 h-10 border-4 border-neon-orange border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <div className="w-10 h-10 border-4 border-blueberry border-t-transparent rounded-full animate-spin mx-auto"></div>
         <p className="text-sm text-gray-500 mt-3">Loading tutor earnings...</p>
       </div>
     );
@@ -61,7 +61,7 @@ export default function TutorWalletPage() {
       
       <div>
         <h1 className="text-3xl font-black text-gray-900 tracking-tight">
-          Tutor Earnings & <span className="text-neon-orange">Escrow Wallet</span>
+          Tutor Earnings & <span className="text-blueberry">Escrow Wallet</span>
         </h1>
         <p className="text-sm text-gray-500 mt-1">
           Track completed lesson settlements and withdraw earnings to your local bank account
@@ -73,14 +73,14 @@ export default function TutorWalletPage() {
         
         {/* Available Balance */}
         <div className="bg-white rounded-3xl border border-gray-200 p-8 shadow-soft flex flex-col justify-between relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100/50 rounded-bl-full -mr-10 -mt-10 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-cream-100/50 rounded-bl-full -mr-10 -mt-10 pointer-events-none"></div>
           
           <div>
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
                 Available for Payout
               </span>
-              <div className="w-10 h-10 rounded-2xl bg-orange-100 text-neon-orange flex items-center justify-center">
+              <div className="w-10 h-10 rounded-2xl bg-cream-100 text-blueberry flex items-center justify-center">
                 <Wallet className="w-5 h-5" />
               </div>
             </div>
@@ -126,13 +126,13 @@ export default function TutorWalletPage() {
       </div>
 
       {/* Platform Commission Notice */}
-      <div className="bg-orange-50/60 border border-orange-200 rounded-3xl p-6 flex items-start gap-4 text-xs">
-        <div className="p-2 rounded-xl bg-orange-100 text-neon-orange shrink-0">
+      <div className="bg-cream-50/60 border border-cream-200 rounded-3xl p-6 flex items-start gap-4 text-xs">
+        <div className="p-2 rounded-xl bg-cream-100 text-blueberry shrink-0">
           <CreditCard className="w-5 h-5" />
         </div>
         <div>
-          <h4 className="font-bold text-orange-950 text-sm">Transparent 90/10 Platform Model</h4>
-          <p className="text-orange-900 mt-1 leading-relaxed">
+          <h4 className="font-bold text-cream-950 text-sm">Transparent 90/10 Platform Model</h4>
+          <p className="text-cream-900 mt-1 leading-relaxed">
             TutorNow charges a flat 10% platform fee on completed sessions to maintain the marketplace, high-speed video servers, and PayHere escrow security. You receive 90% of every agreed price directly in your wallet.
           </p>
         </div>
@@ -163,7 +163,7 @@ export default function TutorWalletPage() {
                 <select
                   value={bankName}
                   onChange={(e) => setBankName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-semibold focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-semibold focus:outline-none focus:border-blueberry"
                 >
                   <option value="Commercial Bank of Ceylon">Commercial Bank of Ceylon</option>
                   <option value="Sampath Bank PLC">Sampath Bank PLC</option>
@@ -182,7 +182,7 @@ export default function TutorWalletPage() {
                   placeholder="e.g. K. A. Perera"
                   value={accountHolder}
                   onChange={(e) => setAccountHolder(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                 />
               </div>
 
@@ -194,7 +194,7 @@ export default function TutorWalletPage() {
                   placeholder="e.g. 8001234567"
                   value={accountNumber}
                   onChange={(e) => setAccountNumber(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                 />
               </div>
             </div>
@@ -203,7 +203,7 @@ export default function TutorWalletPage() {
               <button
                 type="submit"
                 disabled={withdrawing || !wallet || wallet.availableBalance <= 0}
-                className="bg-neon-orange hover:bg-neon-hover disabled:bg-gray-300 text-white text-xs font-bold px-6 py-3 rounded-xl shadow-brand transition-all flex items-center gap-2"
+                className="bg-blueberry hover:bg-blueberry-hover disabled:bg-gray-300 text-white text-xs font-bold px-6 py-3 rounded-xl shadow-brand transition-all flex items-center gap-2"
               >
                 <ArrowDownLeft className="w-4 h-4" />
                 {withdrawing ? 'Processing Transfer...' : `Withdraw LKR ${wallet?.availableBalance?.toLocaleString() || '0.00'}`}

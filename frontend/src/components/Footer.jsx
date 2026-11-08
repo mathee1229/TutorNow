@@ -11,11 +11,11 @@ export default function Footer() {
           
           <div className="md:col-span-1 space-y-3">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-neon-orange flex items-center justify-center text-white">
+              <div className="w-8 h-8 rounded-lg bg-blueberry flex items-center justify-center text-white">
                 <GraduationCap className="w-5 h-5" />
               </div>
               <span className="text-lg font-bold text-gray-900">
-                Tutor<span className="text-neon-orange">Now</span>
+                Tutor<span className="text-blueberry">Now</span>
               </span>
             </div>
             <p className="text-xs text-gray-500 leading-relaxed">
@@ -74,7 +74,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
           <p>© {CURRENT_YEAR} TutorNow (Sri Lanka). All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Engineered with <Heart className="w-3.5 h-3.5 text-neon-orange fill-neon-orange" /> for Sri Lankan Students & Educators
+            Engineered with <Heart className="w-3.5 h-3.5 text-blueberry fill-blueberry" /> for Sri Lankan Students & Educators
           </p>
         </div>
       </div>

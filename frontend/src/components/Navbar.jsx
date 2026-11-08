@@ -40,14 +40,14 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-neon-orange flex items-center justify-center text-white shadow-brand transition-transform group-hover:scale-105">
+            <div className="w-10 h-10 rounded-xl bg-blueberry flex items-center justify-center text-white shadow-brand transition-transform group-hover:scale-105">
               <GraduationCap className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xl font-bold tracking-tight text-gray-900">
-                Tutor<span className="text-neon-orange">Now</span>
+                Tutor<span className="text-blueberry">Now</span>
               </span>
-              <span className="hidden sm:inline-block ml-1.5 px-1.5 py-0.5 text-[10px] font-semibold bg-neon-light text-neon-orange rounded-md border border-orange-200">
+              <span className="hidden sm:inline-block ml-1.5 px-1.5 py-0.5 text-[10px] font-semibold bg-cream-soda text-blueberry rounded-md border border-cream-200">
                 Escrow Protected
               </span>
             </div>
@@ -55,23 +55,23 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
-            <Link to="/marketplace" className="hover:text-neon-orange transition-colors flex items-center gap-1.5">
+            <Link to="/marketplace" className="hover:text-blueberry transition-colors flex items-center gap-1.5">
               <BookOpen className="w-4 h-4 text-gray-400" />
               Lesson Requests
             </Link>
-            <Link to="/tutors" className="hover:text-neon-orange transition-colors flex items-center gap-1.5">
+            <Link to="/tutors" className="hover:text-blueberry transition-colors flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-500" />
               Verified Tutors
             </Link>
 
             {user?.role === 'ROLE_STUDENT' && (
-              <Link to="/student/requests" className="hover:text-neon-orange transition-colors">
+              <Link to="/student/requests" className="hover:text-blueberry transition-colors">
                 My Requests
               </Link>
             )}
 
             {user?.role === 'ROLE_TUTOR' && (
-              <Link to="/tutor/bids" className="hover:text-neon-orange transition-colors">
+              <Link to="/tutor/bids" className="hover:text-blueberry transition-colors">
                 My Bids
               </Link>
             )}
@@ -79,9 +79,9 @@ export default function Navbar() {
             {user?.role === 'ROLE_ADMIN' && (
               <Link 
                 to="/admin" 
-                className="text-orange-700 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-3 py-1.5 rounded-xl text-xs font-bold transition-colors flex items-center gap-1.5 shadow-sm"
+                className="text-cream-700 bg-cream-50 hover:bg-cream-100 border border-cream-200 px-3 py-1.5 rounded-xl text-xs font-bold transition-colors flex items-center gap-1.5 shadow-sm"
               >
-                <ShieldAlert className="w-3.5 h-3.5 text-neon-orange" />
+                <ShieldAlert className="w-3.5 h-3.5 text-blueberry" />
                 Admin Panel
               </Link>
             )}
@@ -94,9 +94,9 @@ export default function Navbar() {
                 {user.role === 'ROLE_TUTOR' && wallet && (
                   <Link 
                     to="/tutor/wallet" 
-                    className="flex items-center gap-1.5 bg-orange-50 border border-orange-200 px-3 py-1.5 rounded-full text-xs font-semibold text-orange-800 hover:bg-orange-100 transition-colors"
+                    className="flex items-center gap-1.5 bg-cream-50 border border-cream-200 px-3 py-1.5 rounded-full text-xs font-semibold text-cream-800 hover:bg-cream-100 transition-colors"
                   >
-                    <Wallet className="w-3.5 h-3.5 text-neon-orange" />
+                    <Wallet className="w-3.5 h-3.5 text-blueberry" />
                     <span>LKR {wallet.availableBalance?.toLocaleString() || '0.00'}</span>
                     {wallet.pendingEscrowBalance > 0 && (
                       <span className="text-gray-500 text-[10px] font-normal">
@@ -109,7 +109,7 @@ export default function Navbar() {
                 {user.role === 'ROLE_STUDENT' && (
                   <Link
                     to="/post-request"
-                    className="inline-flex items-center gap-1.5 bg-neon-orange hover:bg-neon-hover text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-brand transition-all hover:shadow-lg"
+                    className="inline-flex items-center gap-1.5 bg-blueberry hover:bg-blueberry-hover text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-brand transition-all hover:shadow-lg"
                   >
                     <PlusCircle className="w-4 h-4" />
                     Post Doubt / Unit
@@ -142,7 +142,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   to="/register"
-                  className="bg-neon-orange hover:bg-neon-hover text-white text-sm font-semibold px-4 py-2 rounded-xl shadow-brand transition-all"
+                  className="bg-blueberry hover:bg-blueberry-hover text-white text-sm font-semibold px-4 py-2 rounded-xl shadow-brand transition-all"
                 >
                   Get Started
                 </Link>
@@ -168,14 +168,14 @@ export default function Navbar() {
           <Link
             to="/marketplace"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-medium text-gray-700 hover:text-neon-orange"
+            className="block py-2 text-sm font-medium text-gray-700 hover:text-blueberry"
           >
             Lesson Requests Feed
           </Link>
           <Link
             to="/tutors"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-medium text-gray-700 hover:text-neon-orange"
+            className="block py-2 text-sm font-medium text-gray-700 hover:text-blueberry"
           >
             Verified Tutors
           </Link>
@@ -186,7 +186,7 @@ export default function Navbar() {
                 <Link
                   to="/post-request"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full text-center bg-neon-orange text-white py-2 rounded-lg text-sm font-semibold"
+                  className="block w-full text-center bg-blueberry text-white py-2 rounded-lg text-sm font-semibold"
                 >
                   Post Lesson Doubt
                 </Link>
@@ -195,7 +195,7 @@ export default function Navbar() {
                 <Link
                   to="/tutor/wallet"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full text-center bg-orange-50 text-orange-800 py-2 rounded-lg text-sm font-semibold border border-orange-200"
+                  className="block w-full text-center bg-cream-50 text-cream-800 py-2 rounded-lg text-sm font-semibold border border-cream-200"
                 >
                   Wallet & Payouts
                 </Link>
@@ -204,7 +204,7 @@ export default function Navbar() {
                 <Link
                   to="/admin"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full text-center bg-orange-500 text-white py-2 rounded-lg text-sm font-bold shadow-sm"
+                  className="block w-full text-center bg-cream-500 text-white py-2 rounded-lg text-sm font-bold shadow-sm"
                 >
                   Admin Management Portal
                 </Link>
@@ -231,7 +231,7 @@ export default function Navbar() {
               <Link
                 to="/register"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex-1 text-center py-2 bg-neon-orange text-white rounded-lg text-sm font-semibold"
+                className="flex-1 text-center py-2 bg-blueberry text-white rounded-lg text-sm font-semibold"
               >
                 Sign Up
               </Link>

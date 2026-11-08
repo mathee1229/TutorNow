@@ -34,16 +34,16 @@ export default function HomePage() {
   return (
     <div className="space-y-16 pb-12">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-20 bg-gradient-to-b from-orange-50/50 via-white to-transparent">
+      <section className="relative overflow-hidden pt-12 pb-20 bg-gradient-to-b from-cream-50/50 via-white to-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-neon-orange text-xs font-semibold mb-6 animate-pulse">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream-100/80 border border-cream-200 text-blueberry text-xs font-semibold mb-6 animate-pulse">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Sri Lanka's First On-Demand Reverse Bidding Tutoring Platform</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight max-w-4xl mx-auto leading-tight">
-            Stop Paying Monthly Fees When You Only Need <span className="text-neon-orange underline decoration-orange-300">One Specific Topic</span> Solved.
+            Stop Paying Monthly Fees When You Only Need <span className="text-blueberry underline decoration-cream-300">One Specific Topic</span> Solved.
           </h1>
 
           <p className="mt-6 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -54,7 +54,7 @@ export default function HomePage() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to={user?.role === 'ROLE_STUDENT' ? "/post-request" : "/register"}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-neon-orange hover:bg-neon-hover text-white font-bold px-8 py-4 rounded-2xl shadow-brand hover:shadow-lg transition-all text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blueberry hover:bg-blueberry-hover text-white font-bold px-8 py-4 rounded-2xl shadow-brand hover:shadow-lg transition-all text-base"
             >
               <Send className="w-5 h-5" />
               Post Your Lesson Doubt Now
@@ -95,8 +95,8 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-soft relative overflow-hidden group hover:border-orange-200 transition-all">
-            <div className="w-10 h-10 rounded-xl bg-orange-100 text-neon-orange flex items-center justify-center font-black mb-4">
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-soft relative overflow-hidden group hover:border-cream-200 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-cream-100 text-blueberry flex items-center justify-center font-black mb-4">
               1
             </div>
             <h3 className="font-bold text-gray-900 mb-1">Post Specific Topic</h3>
@@ -105,8 +105,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-soft relative overflow-hidden group hover:border-orange-200 transition-all">
-            <div className="w-10 h-10 rounded-xl bg-orange-100 text-neon-orange flex items-center justify-center font-black mb-4">
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-soft relative overflow-hidden group hover:border-cream-200 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-cream-100 text-blueberry flex items-center justify-center font-black mb-4">
               2
             </div>
             <h3 className="font-bold text-gray-900 mb-1">Tutors Submit Bids</h3>
@@ -115,8 +115,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-soft relative overflow-hidden group hover:border-orange-200 transition-all">
-            <div className="w-10 h-10 rounded-xl bg-orange-100 text-neon-orange flex items-center justify-center font-black mb-4">
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-soft relative overflow-hidden group hover:border-cream-200 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-cream-100 text-blueberry flex items-center justify-center font-black mb-4">
               3
             </div>
             <h3 className="font-bold text-gray-900 mb-1">Escrow Hold</h3>
@@ -125,8 +125,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-soft relative overflow-hidden group hover:border-orange-200 transition-all">
-            <div className="w-10 h-10 rounded-xl bg-orange-100 text-neon-orange flex items-center justify-center font-black mb-4">
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-soft relative overflow-hidden group hover:border-cream-200 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-cream-100 text-blueberry flex items-center justify-center font-black mb-4">
               4
             </div>
             <h3 className="font-bold text-gray-900 mb-1">Session & Settlement</h3>
@@ -144,7 +144,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-gray-900">Live Lesson Requests</h2>
             <p className="text-sm text-gray-500 mt-1">Students actively waiting for tutor proposals right now</p>
           </div>
-          <Link to="/marketplace" className="text-sm font-bold text-neon-orange hover:underline flex items-center gap-1">
+          <Link to="/marketplace" className="text-sm font-bold text-blueberry hover:underline flex items-center gap-1">
             View All ({requests.length}) <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -154,7 +154,7 @@ export default function HomePage() {
             <Link
               key={req.id}
               to={`/request/${req.id}`}
-              className="bg-white p-5 rounded-2xl border border-gray-200 hover:border-neon-orange shadow-soft hover:shadow-brand/20 transition-all block group"
+              className="bg-white p-5 rounded-2xl border border-gray-200 hover:border-blueberry shadow-soft hover:shadow-brand/20 transition-all block group"
             >
               <div className="flex justify-between items-start gap-4">
                 <div>
@@ -172,7 +172,7 @@ export default function HomePage() {
                       {req.deliveryMode}
                     </span>
                   </div>
-                  <h3 className="font-bold text-gray-900 group-hover:text-neon-orange transition-colors">
+                  <h3 className="font-bold text-gray-900 group-hover:text-blueberry transition-colors">
                     {req.lessonTopic}
                   </h3>
                   <p className="text-xs text-gray-500 mt-1 flex items-center gap-2">
@@ -189,7 +189,7 @@ export default function HomePage() {
                   <p className="text-lg font-black text-gray-900">
                     LKR {req.targetBudget?.toLocaleString()}
                   </p>
-                  <span className="inline-block mt-1 px-2 py-0.5 bg-orange-50 text-neon-orange rounded-md text-xs font-bold border border-orange-200">
+                  <span className="inline-block mt-1 px-2 py-0.5 bg-cream-50 text-blueberry rounded-md text-xs font-bold border border-cream-200">
                     {req.bidsCount} Bids Submitted
                   </span>
                 </div>
@@ -206,7 +206,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-gray-900">Featured Verified Tutors</h2>
             <p className="text-sm text-gray-500 mt-1">Graduates and undergraduates with verified marksheets</p>
           </div>
-          <Link to="/tutors" className="text-sm font-bold text-neon-orange hover:underline flex items-center gap-1">
+          <Link to="/tutors" className="text-sm font-bold text-blueberry hover:underline flex items-center gap-1">
             Browse All Tutors <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -214,7 +214,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {tutors.map(tutor => (
             <div key={tutor.id} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-soft text-center space-y-3">
-              <div className="w-16 h-16 rounded-full bg-orange-100 mx-auto flex items-center justify-center text-neon-orange font-bold text-xl overflow-hidden border-2 border-orange-200">
+              <div className="w-16 h-16 rounded-full bg-cream-100 mx-auto flex items-center justify-center text-blueberry font-bold text-xl overflow-hidden border-2 border-cream-200">
                 {tutor.idProofUrl ? (
                   <img src={tutor.idProofUrl} alt={tutor.fullName} className="w-full h-full object-cover" />
                 ) : (

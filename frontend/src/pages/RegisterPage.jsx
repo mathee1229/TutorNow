@@ -58,7 +58,7 @@ export default function RegisterPage() {
       <div className="bg-white rounded-3xl border border-gray-200 shadow-soft max-w-lg w-full p-8 sm:p-10 space-y-6">
         
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-2xl bg-neon-orange text-white flex items-center justify-center mx-auto shadow-brand">
+          <div className="w-12 h-12 rounded-2xl bg-blueberry text-white flex items-center justify-center mx-auto shadow-brand">
             <GraduationCap className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-black text-gray-900 tracking-tight">
@@ -75,7 +75,7 @@ export default function RegisterPage() {
             type="button"
             onClick={() => setRole('ROLE_STUDENT')}
             className={`py-2.5 rounded-xl transition-all ${
-              role === 'ROLE_STUDENT' ? 'bg-white text-neon-orange shadow-sm' : 'text-gray-500 hover:text-gray-900'
+              role === 'ROLE_STUDENT' ? 'bg-white text-blueberry shadow-sm' : 'text-gray-500 hover:text-gray-900'
             }`}
           >
             I am a Student
@@ -84,7 +84,7 @@ export default function RegisterPage() {
             type="button"
             onClick={() => setRole('ROLE_TUTOR')}
             className={`py-2.5 rounded-xl transition-all ${
-              role === 'ROLE_TUTOR' ? 'bg-white text-neon-orange shadow-sm' : 'text-gray-500 hover:text-gray-900'
+              role === 'ROLE_TUTOR' ? 'bg-white text-blueberry shadow-sm' : 'text-gray-500 hover:text-gray-900'
             }`}
           >
             I am a Tutor
@@ -107,7 +107,7 @@ export default function RegisterPage() {
               placeholder="e.g. Kasun Silva"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-neon-orange"
+              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blueberry"
             />
           </div>
 
@@ -120,7 +120,7 @@ export default function RegisterPage() {
                 placeholder="kasun@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
               />
             </div>
 
@@ -132,7 +132,7 @@ export default function RegisterPage() {
                 placeholder="0771234567"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
               />
             </div>
           </div>
@@ -145,14 +145,14 @@ export default function RegisterPage() {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-neon-orange"
+              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blueberry"
             />
           </div>
 
           {/* Additional Tutor Credentials */}
           {role === 'ROLE_TUTOR' && (
             <div className="pt-2 border-t border-gray-100 space-y-4">
-              <span className="text-xs font-bold text-neon-orange flex items-center gap-1">
+              <span className="text-xs font-bold text-blueberry flex items-center gap-1">
                 <ShieldCheck className="w-4 h-4" /> Academic & Tutoring Credentials
               </span>
 
@@ -165,7 +165,7 @@ export default function RegisterPage() {
                     placeholder="e.g. University of Moratuwa"
                     value={university}
                     onChange={(e) => setUniversity(e.target.value)}
-                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                   />
                 </div>
 
@@ -177,7 +177,7 @@ export default function RegisterPage() {
                     placeholder="e.g. BSc Eng / Combined Maths"
                     value={degreeField}
                     onChange={(e) => setDegreeField(e.target.value)}
-                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                   />
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function RegisterPage() {
                   step="50"
                   value={hourlyRate}
                   onChange={(e) => setHourlyRate(e.target.value)}
-                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange font-bold"
+                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry font-bold"
                 />
               </div>
 
@@ -202,7 +202,7 @@ export default function RegisterPage() {
                   placeholder="Tell students about your tutoring experience..."
                   value={bio}
                   onChange={(e) => setBio(e.target.value)}
-                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                 ></textarea>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-neon-orange hover:bg-neon-hover text-white font-bold py-3.5 rounded-xl shadow-brand transition-all flex items-center justify-center gap-2 text-sm"
+            className="w-full bg-blueberry hover:bg-blueberry-hover text-white font-bold py-3.5 rounded-xl shadow-brand transition-all flex items-center justify-center gap-2 text-sm"
           >
             <UserCheck className="w-4 h-4" />
             {loading ? 'Creating Account...' : `Register as ${role === 'ROLE_STUDENT' ? 'Student' : 'Tutor'}`}
@@ -220,7 +220,7 @@ export default function RegisterPage() {
 
         <p className="text-center text-xs text-gray-500">
           Already have an account?{' '}
-          <Link to="/login" className="font-bold text-neon-orange hover:underline">
+          <Link to="/login" className="font-bold text-blueberry hover:underline">
             Sign In
           </Link>
         </p>

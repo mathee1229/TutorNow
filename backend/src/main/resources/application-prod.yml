@@ -1,0 +1,8 @@
+app:
+  demo-data:
+    enabled: false
+  bootstrap:
+    admin-email: "${TUTORNOW_ADMIN_EMAIL:}"
+    admin-password: "${TUTORNOW_ADMIN_PASSWORD:}"
+  jwt:
+    secret: "${TUTORNOW_JWT_SECRET}"

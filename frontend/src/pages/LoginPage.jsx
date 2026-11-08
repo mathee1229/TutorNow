@@ -38,11 +38,11 @@ export default function LoginPage() {
       <div className="bg-white rounded-3xl border border-gray-200 shadow-soft max-w-md w-full p-8 sm:p-10 space-y-6">
         
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-2xl bg-neon-orange text-white flex items-center justify-center mx-auto shadow-brand">
+          <div className="w-12 h-12 rounded-2xl bg-blueberry text-white flex items-center justify-center mx-auto shadow-brand">
             <GraduationCap className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-black text-gray-900 tracking-tight">
-            Welcome to Tutor<span className="text-neon-orange">Now</span>
+            Welcome to Tutor<span className="text-blueberry">Now</span>
           </h2>
           <p className="text-xs text-gray-500">
             Sign in to access reverse bids, lesson requests, and escrow balance
@@ -65,7 +65,7 @@ export default function LoginPage() {
               placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-neon-orange"
+              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blueberry"
             />
           </div>
 
@@ -77,14 +77,14 @@ export default function LoginPage() {
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-neon-orange"
+              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blueberry"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-neon-orange hover:bg-neon-hover text-white font-bold py-3 rounded-xl shadow-brand transition-all flex items-center justify-center gap-2 text-sm"
+            className="w-full bg-blueberry hover:bg-blueberry-hover text-white font-bold py-3 rounded-xl shadow-brand transition-all flex items-center justify-center gap-2 text-sm"
           >
             <LogIn className="w-4 h-4" />
             {loading ? 'Authenticating...' : 'Sign In'}
@@ -93,7 +93,7 @@ export default function LoginPage() {
 
         <p className="text-center text-xs text-gray-500">
           Don't have an account yet?{' '}
-          <Link to="/register" className="font-bold text-neon-orange hover:underline">
+          <Link to="/register" className="font-bold text-blueberry hover:underline">
             Register now
           </Link>
         </p>

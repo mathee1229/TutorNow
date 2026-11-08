@@ -7,14 +7,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        neon: {
-          orange: '#FF5F1F',
-          hover: '#E04E15',
-          light: '#FFF0EB'
+        blueberry: {
+          DEFAULT: '#6A00F4',
+          hover: '#5400C2',
+        },
+        'cream-soda': '#FFD6A5',
+        cream: {
+          50: '#FFF8EF',
+          100: '#FFEBD3',
+          200: '#FFD6A5',
+          300: '#FFC281',
+          500: '#FFD6A5',
+          700: '#5400C2',
+          800: '#430099',
+          900: '#320073',
+          950: '#22004D',
         },
         porcelain: {
-          DEFAULT: '#F7F8F9',
-          dark: '#EAECEF',
+          DEFAULT: '#FFF8EF',
+          dark: '#FFEBD3',
           card: '#FFFFFF'
         },
         surface: {
@@ -25,7 +36,7 @@ export default {
         }
       },
       boxShadow: {
-        'brand': '0 10px 25px -5px rgba(255, 95, 31, 0.25)',
+        'brand': '0 10px 25px -5px rgba(106, 0, 244, 0.25)',
         'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)'
       }
     },

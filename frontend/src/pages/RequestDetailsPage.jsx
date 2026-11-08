@@ -95,7 +95,7 @@ export default function RequestDetailsPage() {
   if (loading) {
     return (
       <div className="py-24 text-center">
-        <div className="w-10 h-10 border-4 border-neon-orange border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <div className="w-10 h-10 border-4 border-blueberry border-t-transparent rounded-full animate-spin mx-auto"></div>
         <p className="text-sm text-gray-500 mt-3">Loading lesson details...</p>
       </div>
     );
@@ -107,7 +107,7 @@ export default function RequestDetailsPage() {
         <AlertCircle className="w-12 h-12 text-red-500 mx-auto" />
         <h2 className="text-xl font-bold text-gray-900">Request Not Found</h2>
         <p className="text-xs text-gray-500">{error}</p>
-        <Link to="/marketplace" className="inline-block bg-neon-orange text-white text-xs font-bold px-4 py-2 rounded-xl">
+        <Link to="/marketplace" className="inline-block bg-blueberry text-white text-xs font-bold px-4 py-2 rounded-xl">
           Return to Marketplace
         </Link>
       </div>
@@ -125,7 +125,7 @@ export default function RequestDetailsPage() {
         <div className="flex flex-col sm:flex-row justify-between items-start gap-4 border-b border-gray-100 pb-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="px-3 py-1 bg-orange-50 text-neon-orange border border-orange-200 rounded-md text-xs font-bold">
+              <span className="px-3 py-1 bg-cream-50 text-blueberry border border-cream-200 rounded-md text-xs font-bold">
                 {request.subject}
               </span>
               <span className="text-xs font-semibold text-gray-400">
@@ -169,7 +169,7 @@ export default function RequestDetailsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
           <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100 space-y-1">
             <h4 className="font-bold text-gray-700 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-neon-orange" /> Location Details
+              <MapPin className="w-3.5 h-3.5 text-blueberry" /> Location Details
             </h4>
             <p className="text-gray-600">
               <strong>Area:</strong> {request.townName || 'Online Video Classroom'}
@@ -181,14 +181,14 @@ export default function RequestDetailsPage() {
 
           <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100 space-y-1">
             <h4 className="font-bold text-gray-700 flex items-center gap-1.5">
-              <FileText className="w-3.5 h-3.5 text-neon-orange" /> Attachments
+              <FileText className="w-3.5 h-3.5 text-blueberry" /> Attachments
             </h4>
             {request.attachmentUrls ? (
               <a
                 href={request.attachmentUrls}
                 target="_blank"
                 rel="noreferrer"
-                className="text-neon-orange font-bold hover:underline inline-block break-all"
+                className="text-blueberry font-bold hover:underline inline-block break-all"
               >
                 {request.attachmentUrls}
               </a>
@@ -201,16 +201,16 @@ export default function RequestDetailsPage() {
 
       {/* Tutor Action CTA (If logged in as Tutor & haven't bid yet) */}
       {user?.role === 'ROLE_TUTOR' && request.status === 'OPEN' && !hasAlreadyBid && (
-        <div className="bg-orange-50 border border-orange-200 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="bg-cream-50 border border-cream-200 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div>
-            <h3 className="font-bold text-orange-950 text-lg">Interested in tutoring this student?</h3>
-            <p className="text-xs text-orange-800 mt-1">
+            <h3 className="font-bold text-cream-950 text-lg">Interested in tutoring this student?</h3>
+            <p className="text-xs text-cream-800 mt-1">
               Submit your proposed fee and teaching approach. Student can accept immediately.
             </p>
           </div>
           <button
             onClick={() => setShowBidForm(!showBidForm)}
-            className="bg-neon-orange hover:bg-neon-hover text-white text-sm font-bold px-6 py-3 rounded-xl shadow-brand transition-all shrink-0"
+            className="bg-blueberry hover:bg-blueberry-hover text-white text-sm font-bold px-6 py-3 rounded-xl shadow-brand transition-all shrink-0"
           >
             {showBidForm ? 'Close Proposal Form' : 'Submit Reverse Bid'}
           </button>
@@ -240,7 +240,7 @@ export default function RequestDetailsPage() {
                   step="50"
                   value={proposedPrice}
                   onChange={(e) => setProposedPrice(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-bold focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-bold focus:outline-none focus:border-blueberry"
                 />
               </div>
 
@@ -251,7 +251,7 @@ export default function RequestDetailsPage() {
                   required
                   value={availableSlot}
                   onChange={(e) => setAvailableSlot(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                 />
               </div>
             </div>
@@ -264,7 +264,7 @@ export default function RequestDetailsPage() {
                 placeholder="Describe your lesson structure and doubts resolution methodology..."
                 value={coverNote}
                 onChange={(e) => setCoverNote(e.target.value)}
-                className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
               ></textarea>
             </div>
 
@@ -272,7 +272,7 @@ export default function RequestDetailsPage() {
               <button
                 type="submit"
                 disabled={submittingBid}
-                className="bg-neon-orange hover:bg-neon-hover text-white text-xs font-bold px-6 py-2.5 rounded-xl shadow-brand"
+                className="bg-blueberry hover:bg-blueberry-hover text-white text-xs font-bold px-6 py-2.5 rounded-xl shadow-brand"
               >
                 {submittingBid ? 'Submitting...' : 'Post Bid'}
               </button>
@@ -308,12 +308,12 @@ export default function RequestDetailsPage() {
               <div
                 key={bid.id}
                 className={`bg-white rounded-3xl border p-6 shadow-soft transition-all ${
-                  bid.status === 'ACCEPTED' ? 'border-emerald-500 bg-emerald-50/20' : 'border-gray-200 hover:border-orange-200'
+                  bid.status === 'ACCEPTED' ? 'border-emerald-500 bg-emerald-50/20' : 'border-gray-200 hover:border-cream-200'
                 }`}
               >
                 <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-orange-100 text-neon-orange font-bold text-lg flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-cream-100 text-blueberry font-bold text-lg flex items-center justify-center shrink-0">
                       {bid.tutorName.charAt(0)}
                     </div>
                     <div>
@@ -353,7 +353,7 @@ export default function RequestDetailsPage() {
                         <button
                           onClick={() => handleAcceptBid(bid.id)}
                           disabled={acceptingBidId === bid.id}
-                          className="bg-neon-orange hover:bg-neon-hover text-white text-xs font-bold px-4 py-2 rounded-xl shadow-brand transition-all flex items-center gap-1.5"
+                          className="bg-blueberry hover:bg-blueberry-hover text-white text-xs font-bold px-4 py-2 rounded-xl shadow-brand transition-all flex items-center gap-1.5"
                         >
                           <UserCheck className="w-4 h-4" />
                           {acceptingBidId === bid.id ? 'Accepting...' : 'Accept & Proceed'}

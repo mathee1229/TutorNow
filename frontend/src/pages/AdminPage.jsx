@@ -360,12 +360,12 @@ export default function AdminPage() {
       
       {/* Top Banner & Header */}
       <div className="bg-gradient-to-r from-gray-900 via-slate-800 to-gray-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-cream-500/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative z-10">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="px-2.5 py-1 bg-neon-orange text-white text-xs font-bold rounded-lg uppercase tracking-wider flex items-center gap-1 shadow-sm">
+              <span className="px-2.5 py-1 bg-blueberry text-white text-xs font-bold rounded-lg uppercase tracking-wider flex items-center gap-1 shadow-sm">
                 <ShieldAlert className="w-3.5 h-3.5" /> Platform Admin
               </span>
               <span className="text-xs text-gray-400">TutorNow Management Console</span>
@@ -395,7 +395,7 @@ export default function AdminPage() {
             </button>
             <button
               onClick={() => setShowAddUserModal(true)}
-              className="bg-neon-orange hover:bg-neon-hover text-white px-4 py-2 rounded-xl text-xs font-bold shadow-brand transition-all flex items-center gap-1.5"
+              className="bg-blueberry hover:bg-blueberry-hover text-white px-4 py-2 rounded-xl text-xs font-bold shadow-brand transition-all flex items-center gap-1.5"
             >
               <UserPlus className="w-4 h-4" /> Add User / Admin
             </button>
@@ -424,7 +424,7 @@ export default function AdminPage() {
           onClick={() => setActiveTab('overview')}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
             activeTab === 'overview'
-              ? 'bg-neon-orange text-white shadow-brand'
+              ? 'bg-blueberry text-white shadow-brand'
               : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
           }`}
         >
@@ -436,7 +436,7 @@ export default function AdminPage() {
           onClick={() => { setActiveTab('users'); loadUsers(); }}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
             activeTab === 'users'
-              ? 'bg-neon-orange text-white shadow-brand'
+              ? 'bg-blueberry text-white shadow-brand'
               : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
           }`}
         >
@@ -448,7 +448,7 @@ export default function AdminPage() {
           onClick={() => { setActiveTab('tutors'); loadTutors(); }}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all relative ${
             activeTab === 'tutors'
-              ? 'bg-neon-orange text-white shadow-brand'
+              ? 'bg-blueberry text-white shadow-brand'
               : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
           }`}
         >
@@ -465,7 +465,7 @@ export default function AdminPage() {
           onClick={() => { setActiveTab('requests'); loadRequests(); }}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
             activeTab === 'requests'
-              ? 'bg-neon-orange text-white shadow-brand'
+              ? 'bg-blueberry text-white shadow-brand'
               : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
           }`}
         >
@@ -477,7 +477,7 @@ export default function AdminPage() {
           onClick={() => { setActiveTab('bookings'); loadBookings(); }}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
             activeTab === 'bookings'
-              ? 'bg-neon-orange text-white shadow-brand'
+              ? 'bg-blueberry text-white shadow-brand'
               : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
           }`}
         >
@@ -489,7 +489,7 @@ export default function AdminPage() {
           onClick={() => { setActiveTab('reviews'); loadReviews(); }}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
             activeTab === 'reviews'
-              ? 'bg-neon-orange text-white shadow-brand'
+              ? 'bg-blueberry text-white shadow-brand'
               : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
           }`}
         >
@@ -527,7 +527,7 @@ export default function AdminPage() {
             <div className="bg-white rounded-2xl p-5 border border-gray-200 shadow-soft space-y-3">
               <div className="flex justify-between items-center text-gray-500">
                 <span className="text-xs font-bold uppercase tracking-wider">Lesson Requests</span>
-                <div className="p-2 bg-orange-50 text-neon-orange rounded-xl">
+                <div className="p-2 bg-cream-50 text-blueberry rounded-xl">
                   <BookOpen className="w-4 h-4" />
                 </div>
               </div>
@@ -630,7 +630,7 @@ export default function AdminPage() {
 
             <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-soft space-y-3">
               <div className="flex items-center gap-2 font-bold text-sm text-gray-900">
-                <BookOpen className="w-4 h-4 text-neon-orange" /> Lesson Requests Moderation
+                <BookOpen className="w-4 h-4 text-blueberry" /> Lesson Requests Moderation
               </div>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Inspect doubt posts and unit requests, moderate spam, and monitor live bids.
@@ -683,7 +683,7 @@ export default function AdminPage() {
                   value={userSearch}
                   onChange={(e) => setUserSearch(e.target.value)}
                   onKeyDown={(e) => { if (e.key === 'Enter') loadUsers(); }}
-                  className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                  className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                 />
               </div>
 
@@ -691,7 +691,7 @@ export default function AdminPage() {
               <select
                 value={userRoleFilter}
                 onChange={(e) => { setUserRoleFilter(e.target.value); }}
-                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-neon-orange"
+                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blueberry"
               >
                 <option value="">All Roles</option>
                 <option value="ROLE_STUDENT">Students</option>
@@ -703,7 +703,7 @@ export default function AdminPage() {
               <select
                 value={userActiveFilter}
                 onChange={(e) => { setUserActiveFilter(e.target.value); }}
-                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-neon-orange"
+                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blueberry"
               >
                 <option value="">All Statuses</option>
                 <option value="true">Active Only</option>
@@ -739,7 +739,7 @@ export default function AdminPage() {
                     {/* User name & email */}
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-orange-100 text-neon-orange font-bold flex items-center justify-center shrink-0">
+                        <div className="w-8 h-8 rounded-full bg-cream-100 text-blueberry font-bold flex items-center justify-center shrink-0">
                           {u.fullName?.charAt(0) || 'U'}
                         </div>
                         <div>
@@ -881,7 +881,7 @@ export default function AdminPage() {
                   onChange={(e) => {
                     setTutorPendingOnly(e.target.checked);
                   }}
-                  className="rounded text-neon-orange focus:ring-neon-orange h-4 w-4"
+                  className="rounded text-blueberry focus:ring-blueberry h-4 w-4"
                 />
                 Show Pending Only
               </label>
@@ -925,7 +925,7 @@ export default function AdminPage() {
                       <p className="text-xs text-gray-500">{t.email} • {t.phoneNumber || 'No phone'}</p>
                     </div>
 
-                    <span className="text-xs font-extrabold text-neon-orange bg-orange-50 px-2.5 py-1 rounded-lg border border-orange-200">
+                    <span className="text-xs font-extrabold text-blueberry bg-cream-50 px-2.5 py-1 rounded-lg border border-cream-200">
                       LKR {t.hourlyRate?.toLocaleString()}/hr
                     </span>
                   </div>
@@ -1038,14 +1038,14 @@ export default function AdminPage() {
                   value={requestSearch}
                   onChange={(e) => setRequestSearch(e.target.value)}
                   onKeyDown={(e) => { if (e.key === 'Enter') loadRequests(); }}
-                  className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                  className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                 />
               </div>
 
               <select
                 value={requestStatusFilter}
                 onChange={(e) => setRequestStatusFilter(e.target.value)}
-                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-neon-orange"
+                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blueberry"
               >
                 <option value="">All Statuses</option>
                 <option value="OPEN">OPEN</option>
@@ -1093,7 +1093,7 @@ export default function AdminPage() {
                       <p className="text-[11px] text-gray-400">{r.studentEmail}</p>
                     </td>
 
-                    <td className="py-3 px-4 font-bold text-neon-orange">
+                    <td className="py-3 px-4 font-bold text-blueberry">
                       LKR {r.targetBudget?.toLocaleString()}
                     </td>
 
@@ -1178,14 +1178,14 @@ export default function AdminPage() {
                   value={bookingSearch}
                   onChange={(e) => setBookingSearch(e.target.value)}
                   onKeyDown={(e) => { if (e.key === 'Enter') loadBookings(); }}
-                  className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                  className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                 />
               </div>
 
               <select
                 value={bookingPaymentFilter}
                 onChange={(e) => setBookingPaymentFilter(e.target.value)}
-                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-neon-orange"
+                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blueberry"
               >
                 <option value="">All Payments</option>
                 <option value="PENDING">PENDING</option>
@@ -1197,7 +1197,7 @@ export default function AdminPage() {
               <select
                 value={bookingStatusFilter}
                 onChange={(e) => setBookingStatusFilter(e.target.value)}
-                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-neon-orange"
+                className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blueberry"
               >
                 <option value="">All Booking Statuses</option>
                 <option value="CONFIRMED">CONFIRMED</option>
@@ -1420,7 +1420,7 @@ export default function AdminPage() {
                   placeholder="e.g. Kasun Fernando"
                   value={newUserForm.fullName}
                   onChange={(e) => setNewUserForm({ ...newUserForm, fullName: e.target.value })}
-                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-blueberry"
                 />
               </div>
 
@@ -1432,7 +1432,7 @@ export default function AdminPage() {
                   placeholder="kasun@example.lk"
                   value={newUserForm.email}
                   onChange={(e) => setNewUserForm({ ...newUserForm, email: e.target.value })}
-                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-blueberry"
                 />
               </div>
 
@@ -1445,7 +1445,7 @@ export default function AdminPage() {
                     placeholder="••••••••"
                     value={newUserForm.password}
                     onChange={(e) => setNewUserForm({ ...newUserForm, password: e.target.value })}
-                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-neon-orange"
+                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-blueberry"
                   />
                 </div>
 
@@ -1456,7 +1456,7 @@ export default function AdminPage() {
                     placeholder="0771234567"
                     value={newUserForm.phoneNumber}
                     onChange={(e) => setNewUserForm({ ...newUserForm, phoneNumber: e.target.value })}
-                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-neon-orange"
+                    className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-blueberry"
                   />
                 </div>
               </div>
@@ -1466,7 +1466,7 @@ export default function AdminPage() {
                 <select
                   value={newUserForm.role}
                   onChange={(e) => setNewUserForm({ ...newUserForm, role: e.target.value })}
-                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl font-bold focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl font-bold focus:outline-none focus:border-blueberry"
                 >
                   <option value="ROLE_STUDENT">Student</option>
                   <option value="ROLE_TUTOR">Tutor (Auto-Verified)</option>
@@ -1475,8 +1475,8 @@ export default function AdminPage() {
               </div>
 
               {newUserForm.role === 'ROLE_TUTOR' && (
-                <div className="p-3 bg-orange-50/70 border border-orange-200 rounded-xl space-y-2">
-                  <span className="font-bold text-orange-900 block text-[11px]">Tutor Credentials</span>
+                <div className="p-3 bg-cream-50/70 border border-cream-200 rounded-xl space-y-2">
+                  <span className="font-bold text-cream-900 block text-[11px]">Tutor Credentials</span>
                   <div className="grid grid-cols-2 gap-2">
                     <input
                       type="text"
@@ -1506,7 +1506,7 @@ export default function AdminPage() {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 bg-neon-orange hover:bg-neon-hover text-white rounded-xl font-bold shadow-brand"
+                  className="px-5 py-2 bg-blueberry hover:bg-blueberry-hover text-white rounded-xl font-bold shadow-brand"
                 >
                   Create User
                 </button>
@@ -1533,7 +1533,7 @@ export default function AdminPage() {
                   key={r}
                   className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
                     selectedNewRole === r
-                      ? 'border-neon-orange bg-orange-50/50 text-neon-orange font-bold'
+                      ? 'border-blueberry bg-cream-50/50 text-blueberry font-bold'
                       : 'border-gray-200 hover:bg-gray-50 text-gray-700'
                   }`}
                 >
@@ -1543,7 +1543,7 @@ export default function AdminPage() {
                     value={r}
                     checked={selectedNewRole === r}
                     onChange={() => setSelectedNewRole(r)}
-                    className="text-neon-orange focus:ring-neon-orange"
+                    className="text-blueberry focus:ring-blueberry"
                   />
                   <span className="text-xs">
                     {r === 'ROLE_ADMIN' ? '🛡️ Administrator' : r === 'ROLE_TUTOR' ? '🎓 Tutor' : '👤 Student'}
@@ -1563,7 +1563,7 @@ export default function AdminPage() {
               <button
                 type="button"
                 onClick={handleUpdateRole}
-                className="px-4 py-1.5 bg-neon-orange hover:bg-neon-hover text-white rounded-xl text-xs font-bold shadow-brand"
+                className="px-4 py-1.5 bg-blueberry hover:bg-blueberry-hover text-white rounded-xl text-xs font-bold shadow-brand"
               >
                 Save Role
               </button>

@@ -33,7 +33,7 @@ export default function TutorDirectoryPage() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-3xl font-black text-gray-900 tracking-tight">
-            Verified University <span className="text-neon-orange">Tutors</span>
+            Verified University <span className="text-blueberry">Tutors</span>
           </h1>
           <p className="text-sm text-gray-500 mt-1">
             Browse qualified tutors ready to provide instant topic & past-paper doubt assistance
@@ -47,14 +47,14 @@ export default function TutorDirectoryPage() {
             placeholder="Search by tutor or university..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-neon-orange shadow-soft"
+            className="w-full pl-10 pr-4 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blueberry shadow-soft"
           />
         </div>
       </div>
 
       {loading ? (
         <div className="py-24 text-center">
-          <div className="w-10 h-10 border-4 border-neon-orange border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <div className="w-10 h-10 border-4 border-blueberry border-t-transparent rounded-full animate-spin mx-auto"></div>
           <p className="text-sm text-gray-500 mt-3">Loading verified tutors...</p>
         </div>
       ) : filtered.length === 0 ? (
@@ -68,11 +68,11 @@ export default function TutorDirectoryPage() {
           {filtered.map(tutor => (
             <div
               key={tutor.id}
-              className="bg-white rounded-3xl border border-gray-200 p-6 shadow-soft hover:border-orange-200 transition-all flex flex-col justify-between"
+              className="bg-white rounded-3xl border border-gray-200 p-6 shadow-soft hover:border-cream-200 transition-all flex flex-col justify-between"
             >
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-orange-100 text-neon-orange font-black text-xl flex items-center justify-center shrink-0 border border-orange-200 overflow-hidden">
+                  <div className="w-14 h-14 rounded-2xl bg-cream-100 text-blueberry font-black text-xl flex items-center justify-center shrink-0 border border-cream-200 overflow-hidden">
                     {tutor.idProofUrl ? (
                       <img src={tutor.idProofUrl} alt={tutor.fullName} className="w-full h-full object-cover" />
                     ) : (
@@ -115,7 +115,7 @@ export default function TutorDirectoryPage() {
 
                 <Link
                   to="/post-request"
-                  className="bg-orange-50 hover:bg-orange-100 text-neon-orange text-xs font-bold px-3.5 py-1.5 rounded-xl border border-orange-200 transition-colors"
+                  className="bg-cream-50 hover:bg-cream-100 text-blueberry text-xs font-bold px-3.5 py-1.5 rounded-xl border border-cream-200 transition-colors"
                 >
                   Request Lesson
                 </Link>

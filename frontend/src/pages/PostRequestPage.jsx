@@ -87,7 +87,7 @@ export default function PostRequestPage() {
       
       <div className="bg-white rounded-3xl border border-gray-200 shadow-soft p-8 sm:p-10">
         <div className="border-b border-gray-100 pb-6 mb-6">
-          <span className="px-3 py-1 bg-orange-50 text-neon-orange border border-orange-200 rounded-full text-xs font-bold">
+          <span className="px-3 py-1 bg-cream-50 text-blueberry border border-cream-200 rounded-full text-xs font-bold">
             Reverse-Bidding Request
           </span>
           <h1 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2">
@@ -115,7 +115,7 @@ export default function PostRequestPage() {
               <select
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-semibold focus:outline-none focus:border-neon-orange"
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-semibold focus:outline-none focus:border-blueberry"
               >
                 {subjectsList.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
@@ -128,7 +128,7 @@ export default function PostRequestPage() {
               <select
                 value={studentGrade}
                 onChange={(e) => setStudentGrade(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-semibold focus:outline-none focus:border-neon-orange"
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-semibold focus:outline-none focus:border-blueberry"
               >
                 <option value="O/L 2025/2026">O/L 2025/2026</option>
                 <option value="A/L 2025">A/L 2025</option>
@@ -148,7 +148,7 @@ export default function PostRequestPage() {
               placeholder="e.g. Integration by Parts & 2022 Past Paper Question 14"
               value={lessonTopic}
               onChange={(e) => setLessonTopic(e.target.value)}
-              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-neon-orange"
+              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blueberry"
             />
             <p className="text-[11px] text-gray-400 mt-1">
               Be precise so tutors can estimate the preparation time accurately.
@@ -169,7 +169,7 @@ export default function PostRequestPage() {
                   step="50"
                   value={targetBudget}
                   onChange={(e) => setTargetBudget(e.target.value)}
-                  className="w-full pl-12 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-bold focus:outline-none focus:border-neon-orange"
+                  className="w-full pl-12 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-bold focus:outline-none focus:border-blueberry"
                 />
               </div>
               <p className="text-[10px] text-gray-400 mt-1">Tutors may offer equal or lower counter-bids.</p>
@@ -186,7 +186,7 @@ export default function PostRequestPage() {
                 onFocus={(e) => { e.target.min = getMinimumSlot(); }}
                 value={preferredSlot}
                 onChange={(e) => setPreferredSlot(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-neon-orange"
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blueberry"
               />
             </div>
           </div>
@@ -199,7 +199,7 @@ export default function PostRequestPage() {
             <div className="grid grid-cols-2 gap-4">
               <label
                 className={`p-4 rounded-2xl border flex items-center gap-3 cursor-pointer transition-all ${
-                  deliveryMode === 'ONLINE' ? 'border-neon-orange bg-orange-50/50 shadow-sm' : 'border-gray-200 bg-white hover:bg-gray-50'
+                  deliveryMode === 'ONLINE' ? 'border-blueberry bg-cream-50/50 shadow-sm' : 'border-gray-200 bg-white hover:bg-gray-50'
                 }`}
               >
                 <input
@@ -221,7 +221,7 @@ export default function PostRequestPage() {
 
               <label
                 className={`p-4 rounded-2xl border flex items-center gap-3 cursor-pointer transition-all ${
-                  deliveryMode === 'PHYSICAL' ? 'border-neon-orange bg-orange-50/50 shadow-sm' : 'border-gray-200 bg-white hover:bg-gray-50'
+                  deliveryMode === 'PHYSICAL' ? 'border-blueberry bg-cream-50/50 shadow-sm' : 'border-gray-200 bg-white hover:bg-gray-50'
                 }`}
               >
                 <input
@@ -267,7 +267,7 @@ export default function PostRequestPage() {
                     placeholder="e.g. Nugegoda, Kandy, Maharagama"
                     value={townName}
                     onChange={(e) => setTownName(e.target.value)}
-                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                   />
                 </div>
 
@@ -281,7 +281,7 @@ export default function PostRequestPage() {
                     placeholder="e.g. No. 25, Station Road (Private)"
                     value={fullAddress}
                     onChange={(e) => setFullAddress(e.target.value)}
-                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                   />
                 </div>
               </div>
@@ -298,7 +298,7 @@ export default function PostRequestPage() {
               placeholder="https://..."
               value={attachmentUrls}
               onChange={(e) => setAttachmentUrls(e.target.value)}
-              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+              className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
             />
           </div>
 
@@ -306,7 +306,7 @@ export default function PostRequestPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-neon-orange hover:bg-neon-hover text-white font-bold px-8 py-3.5 rounded-xl shadow-brand hover:shadow-lg transition-all text-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blueberry hover:bg-blueberry-hover text-white font-bold px-8 py-3.5 rounded-xl shadow-brand hover:shadow-lg transition-all text-sm"
             >
               {submitting ? 'Broadcasting Request...' : 'Publish to Marketplace'}
               <Send className="w-4 h-4" />

@@ -19,8 +19,9 @@
 
 ## 🎨 Theme & UI Specs
 
-- **Primary Action Accent:** Neon Orange (`#FF5F1F`)
-- **Background Surfaces:** Porcelain (`#F7F8F9`)
+- **Primary Action Accent:** Blueberry (`#6A00F4`)
+- **Secondary Accent:** Cream Soda (`#FFD6A5`)
+- **Background Surfaces:** Pale Cream (`#FFF8EF`)
 - **Card Highlights:** White with soft glassmorphic shadows and Lucide React icons.
 
 ---

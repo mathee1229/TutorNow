@@ -111,7 +111,7 @@ export default function MarketplacePage() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-3xl font-black text-gray-900 tracking-tight">
-            Lesson & Doubt <span className="text-neon-orange">Marketplace</span>
+            Lesson & Doubt <span className="text-blueberry">Marketplace</span>
           </h1>
           <p className="text-sm text-gray-500 mt-1">
             Browse targeted topic requests posted by students across Sri Lanka
@@ -121,7 +121,7 @@ export default function MarketplacePage() {
         {user?.role === 'ROLE_STUDENT' && (
           <Link
             to="/post-request"
-            className="inline-flex items-center gap-2 bg-neon-orange hover:bg-neon-hover text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-brand transition-all"
+            className="inline-flex items-center gap-2 bg-blueberry hover:bg-blueberry-hover text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-brand transition-all"
           >
             <PlusCircle className="w-4 h-4" />
             Post New Doubt
@@ -138,7 +138,7 @@ export default function MarketplacePage() {
             placeholder="Search by subject (e.g. Combined Maths, Physics, Chemistry) or topic..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-neon-orange focus:bg-white transition-all"
+            className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blueberry focus:bg-white transition-all"
           />
         </div>
 
@@ -152,7 +152,7 @@ export default function MarketplacePage() {
                 key={mode}
                 onClick={() => setSelectedMode(mode)}
                 className={`px-3 py-1.5 rounded-lg transition-all ${
-                  selectedMode === mode ? 'bg-white text-neon-orange shadow-sm' : 'text-gray-600 hover:text-gray-900'
+                  selectedMode === mode ? 'bg-white text-blueberry shadow-sm' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 {mode}
@@ -165,12 +165,12 @@ export default function MarketplacePage() {
       {/* Requests Listing */}
       {loading ? (
         <div className="py-20 text-center space-y-3">
-          <div className="w-10 h-10 border-4 border-neon-orange border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <div className="w-10 h-10 border-4 border-blueberry border-t-transparent rounded-full animate-spin mx-auto"></div>
           <p className="text-sm text-gray-500">Loading marketplace opportunities...</p>
         </div>
       ) : filteredRequests.length === 0 ? (
         <div className="bg-white py-16 px-4 rounded-2xl border border-dashed border-gray-300 text-center max-w-md mx-auto space-y-3">
-          <div className="w-12 h-12 bg-orange-50 text-neon-orange rounded-full flex items-center justify-center mx-auto">
+          <div className="w-12 h-12 bg-cream-50 text-blueberry rounded-full flex items-center justify-center mx-auto">
             <Search className="w-6 h-6" />
           </div>
           <h3 className="font-bold text-gray-900">No requests match your filter</h3>
@@ -181,12 +181,12 @@ export default function MarketplacePage() {
           {filteredRequests.map(req => (
             <div
               key={req.id}
-              className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-orange-200 hover:shadow-brand/10 shadow-soft transition-all"
+              className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:border-cream-200 hover:shadow-brand/10 shadow-soft transition-all"
             >
               <div className="space-y-4">
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-orange-50 text-neon-orange border border-orange-200">
+                    <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-cream-50 text-blueberry border border-cream-200">
                       {req.subject}
                     </span>
                     <span className="ml-2 text-xs font-semibold text-gray-400">
@@ -238,7 +238,7 @@ export default function MarketplacePage() {
                   {user?.role === 'ROLE_TUTOR' && (
                     <button
                       onClick={() => handleOpenBidModal(req)}
-                      className="bg-neon-orange hover:bg-neon-hover text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-brand transition-all"
+                      className="bg-blueberry hover:bg-blueberry-hover text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-brand transition-all"
                     >
                       Bid / Propose
                     </button>
@@ -296,7 +296,7 @@ export default function MarketplacePage() {
                     step="50"
                     value={bidPrice}
                     onChange={(e) => setBidPrice(e.target.value)}
-                    className="w-full pl-12 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-bold focus:outline-none focus:border-neon-orange"
+                    className="w-full pl-12 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-bold focus:outline-none focus:border-blueberry"
                   />
                 </div>
                 <p className="text-[10px] text-gray-400 mt-1">
@@ -313,7 +313,7 @@ export default function MarketplacePage() {
                   required
                   value={bidSlot}
                   onChange={(e) => setBidSlot(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blueberry"
                 />
               </div>
 
@@ -327,7 +327,7 @@ export default function MarketplacePage() {
                   placeholder="Explain how you will resolve this topic (e.g., theory breakdown, solving 5 past paper questions, notes provided)..."
                   value={bidNote}
                   onChange={(e) => setBidNote(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                  className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                 ></textarea>
               </div>
 
@@ -342,7 +342,7 @@ export default function MarketplacePage() {
                 <button
                   type="submit"
                   disabled={submittingBid}
-                  className="bg-neon-orange hover:bg-neon-hover text-white text-xs font-bold px-6 py-2.5 rounded-xl shadow-brand flex items-center gap-2"
+                  className="bg-blueberry hover:bg-blueberry-hover text-white text-xs font-bold px-6 py-2.5 rounded-xl shadow-brand flex items-center gap-2"
                 >
                   {submittingBid ? 'Submitting...' : 'Submit Custom Bid'}
                   <Send className="w-3.5 h-3.5" />

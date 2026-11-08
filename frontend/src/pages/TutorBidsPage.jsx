@@ -19,7 +19,7 @@ export default function TutorBidsPage() {
       
       <div>
         <h1 className="text-3xl font-black text-gray-900 tracking-tight">
-          My Submitted <span className="text-neon-orange">Bids</span>
+          My Submitted <span className="text-blueberry">Bids</span>
         </h1>
         <p className="text-sm text-gray-500 mt-1">
           Review your proposals, accepted lessons, and payout statuses
@@ -28,7 +28,7 @@ export default function TutorBidsPage() {
 
       {loading ? (
         <div className="py-20 text-center">
-          <div className="w-10 h-10 border-4 border-neon-orange border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <div className="w-10 h-10 border-4 border-blueberry border-t-transparent rounded-full animate-spin mx-auto"></div>
           <p className="text-sm text-gray-500 mt-3">Loading your bids...</p>
         </div>
       ) : bids.length === 0 ? (
@@ -40,7 +40,7 @@ export default function TutorBidsPage() {
           </p>
           <Link
             to="/marketplace"
-            className="inline-block bg-neon-orange text-white text-xs font-bold px-4 py-2 rounded-xl"
+            className="inline-block bg-blueberry text-white text-xs font-bold px-4 py-2 rounded-xl"
           >
             Explore Lesson Requests
           </Link>

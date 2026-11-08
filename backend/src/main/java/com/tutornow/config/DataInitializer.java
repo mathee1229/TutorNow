@@ -10,6 +10,7 @@ import com.tutornow.service.AuthService;
 import com.tutornow.service.BidService;
 import com.tutornow.service.LessonRequestService;
 import com.tutornow.service.TutorService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
@@ -35,8 +36,40 @@ public class DataInitializer implements CommandLineRunner {
         this.tutorService = tutorService;
     }
 
+    @Value("${app.demo-data.enabled:true}")
+    private boolean demoDataEnabled;
+
+    @Value("${app.bootstrap.admin-email:}")
+    private String adminEmail;
+
+    @Value("${app.bootstrap.admin-password:}")
+    private String adminPassword;
+
+    private void initializeAdmin() {
+        if (userRepository.countByRole(Role.ROLE_ADMIN) > 0) {
+            return;
+        }
+
+        if (adminEmail.isBlank() || adminPassword.length() < 16) {
+            throw new IllegalStateException(
+                    "Set TUTORNOW_ADMIN_EMAIL and a TUTORNOW_ADMIN_PASSWORD of at least 16 characters");
+        }
+
+        authService.register(AuthDto.RegisterRequest.builder()
+                .fullName("TutorNow Admin")
+                .email(adminEmail.strip())
+                .password(adminPassword)
+                .role(Role.ROLE_ADMIN)
+                .build());
+    }
+
     @Override
     public void run(String... args) {
+        if (!demoDataEnabled) {
+            initializeAdmin();
+            return;
+        }
+
         if (userRepository.count() > 0) {
             return;
         }

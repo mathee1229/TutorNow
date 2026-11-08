@@ -1,6 +1,7 @@
 package com.tutornow.controller;
 
 import com.tutornow.dto.AuthDto;
+import com.tutornow.model.Role;
 import com.tutornow.model.User;
 import com.tutornow.service.AuthService;
 import jakarta.validation.Valid;
@@ -21,6 +22,9 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthDto.AuthResponse> register(@Valid @RequestBody AuthDto.RegisterRequest request) {
+        if (request.getRole() == Role.ROLE_ADMIN) {
+            return ResponseEntity.badRequest().build();
+        }
         return ResponseEntity.ok(authService.register(request));
     }
 

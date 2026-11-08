@@ -194,7 +194,7 @@ export default function BookingDetailsPage() {
   if (loading) {
     return (
       <div className="py-24 text-center">
-        <div className="w-10 h-10 border-4 border-neon-orange border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <div className="w-10 h-10 border-4 border-blueberry border-t-transparent rounded-full animate-spin mx-auto"></div>
         <p className="text-sm text-gray-500 mt-3">Loading booking & escrow status...</p>
       </div>
     );
@@ -222,7 +222,7 @@ export default function BookingDetailsPage() {
         <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="px-3 py-1 bg-orange-50 text-neon-orange border border-orange-200 rounded-md text-xs font-bold">
+              <span className="px-3 py-1 bg-cream-50 text-blueberry border border-cream-200 rounded-md text-xs font-bold">
                 Booking #{booking.id}
               </span>
               <span className={`px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 ${
@@ -287,7 +287,7 @@ export default function BookingDetailsPage() {
         <div className="bg-white rounded-3xl border border-gray-200 shadow-soft overflow-hidden">
           
           {/* Header & Escrow Shield Banner */}
-          <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/5 p-6 sm:p-8 border-b border-amber-200/60">
+          <div className="bg-gradient-to-r from-amber-500/10 via-cream-500/10 to-amber-500/5 p-6 sm:p-8 border-b border-amber-200/60">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div className="flex items-start gap-3.5">
                 <div className="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-900 flex items-center justify-center shrink-0">
@@ -322,7 +322,7 @@ export default function BookingDetailsPage() {
                 onClick={() => setPaymentMethod('card')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
                   paymentMethod === 'card'
-                    ? 'bg-neon-orange text-white shadow-brand'
+                    ? 'bg-blueberry text-white shadow-brand'
                     : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200'
                 }`}
               >
@@ -335,7 +335,7 @@ export default function BookingDetailsPage() {
                 onClick={() => setPaymentMethod('payhere')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
                   paymentMethod === 'payhere'
-                    ? 'bg-neon-orange text-white shadow-brand'
+                    ? 'bg-blueberry text-white shadow-brand'
                     : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200'
                 }`}
               >
@@ -367,7 +367,7 @@ export default function BookingDetailsPage() {
                 {/* Visual Card Preview */}
                 <div className="lg:col-span-5 flex flex-col items-center">
                   <div className="w-full max-w-sm h-52 rounded-3xl p-6 text-white bg-gradient-to-tr from-gray-900 via-slate-800 to-gray-950 shadow-2xl relative overflow-hidden flex flex-col justify-between border border-gray-700/50">
-                    <div className="absolute right-0 top-0 translate-x-6 -translate-y-6 w-44 h-44 bg-orange-500/20 rounded-full blur-2xl pointer-events-none" />
+                    <div className="absolute right-0 top-0 translate-x-6 -translate-y-6 w-44 h-44 bg-cream-500/20 rounded-full blur-2xl pointer-events-none" />
                     
                     {/* Card Top Row: Chip & Brand */}
                     <div className="flex justify-between items-center relative z-10">
@@ -412,14 +412,14 @@ export default function BookingDetailsPage() {
                     <button
                       type="button"
                       onClick={() => fillSampleCard('VISA')}
-                      className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-orange-50 text-[11px] font-bold text-gray-700 hover:text-neon-orange border border-gray-200 transition-colors"
+                      className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-cream-50 text-[11px] font-bold text-gray-700 hover:text-blueberry border border-gray-200 transition-colors"
                     >
                       Fill Visa Card
                     </button>
                     <button
                       type="button"
                       onClick={() => fillSampleCard('MASTERCARD')}
-                      className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-orange-50 text-[11px] font-bold text-gray-700 hover:text-neon-orange border border-gray-200 transition-colors"
+                      className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-cream-50 text-[11px] font-bold text-gray-700 hover:text-blueberry border border-gray-200 transition-colors"
                     >
                       Fill Mastercard
                     </button>
@@ -443,7 +443,7 @@ export default function BookingDetailsPage() {
                         placeholder="4532 •••• •••• 5678"
                         value={cardNumber}
                         onChange={handleCardNumberChange}
-                        className="w-full pl-10 pr-16 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-mono focus:outline-none focus:border-neon-orange focus:bg-white transition-colors"
+                        className="w-full pl-10 pr-16 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-mono focus:outline-none focus:border-blueberry focus:bg-white transition-colors"
                       />
                       <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">
                         {getCardBrand(cardNumber)}
@@ -467,7 +467,7 @@ export default function BookingDetailsPage() {
                           setCardHolder(e.target.value);
                           if (cardError) setCardError('');
                         }}
-                        className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-neon-orange focus:bg-white transition-colors uppercase"
+                        className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blueberry focus:bg-white transition-colors uppercase"
                       />
                     </div>
                   </div>
@@ -487,7 +487,7 @@ export default function BookingDetailsPage() {
                           placeholder="MM/YY"
                           value={cardExpiry}
                           onChange={handleExpiryChange}
-                          className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-mono focus:outline-none focus:border-neon-orange focus:bg-white transition-colors"
+                          className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-mono focus:outline-none focus:border-blueberry focus:bg-white transition-colors"
                         />
                       </div>
                     </div>
@@ -513,7 +513,7 @@ export default function BookingDetailsPage() {
                             setCardCvv(e.target.value.replace(/\D/g, '').slice(0, 4));
                             if (cardError) setCardError('');
                           }}
-                          className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-mono tracking-widest focus:outline-none focus:border-neon-orange focus:bg-white transition-colors"
+                          className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-mono tracking-widest focus:outline-none focus:border-blueberry focus:bg-white transition-colors"
                         />
                       </div>
                     </div>
@@ -525,7 +525,7 @@ export default function BookingDetailsPage() {
                       type="checkbox"
                       checked={saveCard}
                       onChange={(e) => setSaveCard(e.target.checked)}
-                      className="rounded border-gray-300 text-neon-orange focus:ring-neon-orange"
+                      className="rounded border-gray-300 text-blueberry focus:ring-blueberry"
                     />
                     <span className="text-xs text-gray-600 font-medium">
                       Save card securely for 1-click booking checkout
@@ -544,7 +544,7 @@ export default function BookingDetailsPage() {
                     </div>
                     <div className="flex justify-between text-gray-900 font-black pt-2 border-t border-gray-200 text-sm">
                       <span>Total to Deposit:</span>
-                      <span className="text-neon-orange">LKR {booking.agreedPrice?.toLocaleString()}</span>
+                      <span className="text-blueberry">LKR {booking.agreedPrice?.toLocaleString()}</span>
                     </div>
                   </div>
 
@@ -552,7 +552,7 @@ export default function BookingDetailsPage() {
                   <button
                     type="submit"
                     disabled={processingPayment}
-                    className="w-full bg-neon-orange hover:bg-neon-hover text-white text-sm font-bold py-3.5 rounded-xl shadow-brand transition-all flex items-center justify-center gap-2"
+                    className="w-full bg-blueberry hover:bg-blueberry-hover text-white text-sm font-bold py-3.5 rounded-xl shadow-brand transition-all flex items-center justify-center gap-2"
                   >
                     <CreditCard className="w-4 h-4" />
                     {processingPayment
@@ -571,9 +571,9 @@ export default function BookingDetailsPage() {
 
             {/* ================= METHOD 2: PAYHERE GATEWAY TAB ================= */}
             {paymentMethod === 'payhere' && (
-              <div className="bg-orange-50/50 border border-orange-200 rounded-2xl p-6 space-y-4">
+              <div className="bg-cream-50/50 border border-cream-200 rounded-2xl p-6 space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="p-2 bg-orange-100 text-neon-orange rounded-xl shrink-0">
+                  <div className="p-2 bg-cream-100 text-blueberry rounded-xl shrink-0">
                     <CreditCard className="w-5 h-5" />
                   </div>
                   <div>
@@ -589,7 +589,7 @@ export default function BookingDetailsPage() {
                     type="button"
                     onClick={handleSimulatePayment}
                     disabled={processingPayment}
-                    className="w-full sm:w-auto bg-neon-orange hover:bg-neon-hover text-white text-xs font-bold px-6 py-3 rounded-xl shadow-brand transition-all flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto bg-blueberry hover:bg-blueberry-hover text-white text-xs font-bold px-6 py-3 rounded-xl shadow-brand transition-all flex items-center justify-center gap-2"
                   >
                     <CreditCard className="w-4 h-4" />
                     {processingPayment ? 'Connecting Gateway...' : `Launch PayHere Gateway (LKR ${booking.agreedPrice?.toLocaleString()})`}
@@ -712,7 +712,7 @@ export default function BookingDetailsPage() {
               </span>
               <button
                 onClick={() => setShowReviewModal(true)}
-                className="text-neon-orange font-bold hover:underline"
+                className="text-blueberry font-bold hover:underline"
               >
                 Leave / Update Review
               </button>
@@ -761,7 +761,7 @@ export default function BookingDetailsPage() {
                     placeholder="Did the tutor clarify the doubt well? Was the lesson structured?"
                     value={feedbackText}
                     onChange={(e) => setFeedbackText(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-neon-orange"
+                    className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-blueberry"
                   ></textarea>
                 </div>
 
@@ -776,7 +776,7 @@ export default function BookingDetailsPage() {
                   <button
                     type="submit"
                     disabled={submittingReview}
-                    className="bg-neon-orange hover:bg-neon-hover text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow-brand"
+                    className="bg-blueberry hover:bg-blueberry-hover text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow-brand"
                   >
                     {submittingReview ? 'Submitting...' : 'Submit Review'}
                   </button>
