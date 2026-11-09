@@ -1453,11 +1453,17 @@ export default function AdminPage() {
                   <label className="block font-bold text-gray-700 mb-1">Phone</label>
                   <input
                     type="tel"
+                    inputMode="numeric"
+                    minLength={10}
+                    maxLength={10}
+                    pattern="[0-9]{10}"
+                    title="Enter exactly 10 digits, e.g. 0771234567"
                     placeholder="0771234567"
                     value={newUserForm.phoneNumber}
                     onChange={(e) => setNewUserForm({ ...newUserForm, phoneNumber: e.target.value })}
                     className="w-full px-3.5 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-blueberry"
                   />
+                  <p className="mt-1 text-xs text-gray-500">Enter 10 digits, e.g. 0771234567.</p>
                 </div>
               </div>
 

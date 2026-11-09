@@ -56,11 +56,13 @@ export default function LoginPage() {
           </div>
         )}
 
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} autoComplete="off" className="space-y-4">
           <div>
             <label className="block text-xs font-bold text-gray-700 mb-1">Email Address</label>
             <input
               type="email"
+              name="email"
+              autoComplete="off"
               required
               placeholder="name@example.com"
               value={email}
@@ -73,6 +75,8 @@ export default function LoginPage() {
             <label className="block text-xs font-bold text-gray-700 mb-1">Password</label>
             <input
               type="password"
+              name="password"
+              autoComplete="off"
               required
               placeholder="••••••••"
               value={password}

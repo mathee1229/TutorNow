@@ -8,6 +8,7 @@ import com.tutornow.model.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -238,6 +239,7 @@ public class AdminDto {
         @NotBlank(message = "Password is required")
         private String password;
 
+        @Pattern(regexp = "(?:[0-9]{10})?", message = "Phone number must contain exactly 10 digits")
         private String phoneNumber;
 
         @NotNull(message = "Role is required")

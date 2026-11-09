@@ -4,6 +4,7 @@ import com.tutornow.model.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import java.math.BigDecimal;
 
 public class AuthDto {
@@ -19,6 +20,8 @@ public class AuthDto {
         @NotBlank(message = "Password is required")
         private String password;
 
+        @NotBlank(message = "Phone number is required")
+        @Pattern(regexp = "[0-9]{10}", message = "Phone number must contain exactly 10 digits")
         private String phoneNumber;
 
         @NotNull(message = "Role is required")
